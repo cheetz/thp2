@@ -143,6 +143,7 @@ DSHashes:
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
+●	apt-get update (This prevents failure when attempting to retrieve python-elixir - May not be required in all cases)
 ●	apt-get install python-elixir
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
 
