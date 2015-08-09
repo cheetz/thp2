@@ -36,7 +36,7 @@ Tool Installation
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
-●	cd the-backdoor-factory
+●	cd /opt/the-backdoor-factory
 ●	./install.sh
 
 HTTPScreenShot
