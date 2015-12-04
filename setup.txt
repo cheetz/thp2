@@ -108,7 +108,7 @@ Recon-ng
 Discover Scripts
 ●	Custom bash scripts used to automate various pentesting tasks.
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
-●	cd /opt/discover && ./setup.sh
+●	cd /opt/discover && ./update.sh
 
 BeEF Exploitation Framework
 ●	A cross-site scripting attack framework
