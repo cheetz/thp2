@@ -134,7 +134,7 @@ The Hacker Playbook 2 - Forked Versions
 ●	Forked versions of PowerSploit and Powertools used in the book. Make sure you clone your own repositories from the original sources.
 ●	git clone https://github.com/cheetz/PowerSploit /opt/HP_PowerSploit
 ●	git clone https://github.com/cheetz/PowerTools /opt/HP_PowerTools
-●	git clone https://github.com/cheetz/nishang /opt/nishang
+●	git clone https://github.com/cheetz/nishang /opt/HP_nishang
 
 DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
