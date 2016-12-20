@@ -139,6 +139,7 @@ The Hacker Playbook 2 - Forked Versions
 DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
+●	chmod +x /opt/NTDSXtract/dshashes.py
 
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
