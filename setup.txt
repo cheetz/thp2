@@ -13,11 +13,9 @@ Once Your Kali VM is Up and Running
 	○	apt-get dist-upgrade
 ●	Setup Metasploit database
 	○	service postgresql start
+	○	msfdb init
 ●	Make postgresql database start on boot
 	○	update-rc.d postgresql enable
-●	Start and stop the Metasploit service (this will setup the database.yml file for you)
-	○	service metasploit start
-	○	service metasploit stop
 ●	Install gedit
 	○	apt-get install gedit
 ●	Change the hostname - Many network admins look for systems named Kali in logs like DHCP. It is best to follow the naming standard used by the company you are testing
@@ -29,14 +27,14 @@ Once Your Kali VM is Up and Running
 ●	*Optional for Metasploit - Enable Logging
 	○	I list this as optional since logs get pretty big, but you have the ability to log every command and result from Metasploit’s Command Line Interface (CLI). This becomes very useful for bulk attack/queries or if your client requires these logs. *If this is a fresh image, type msfconsole first and exit before configuring logging to create the .msf4 folder.
 	○	From a command prompt, type:
-		■	echo “spool /root/msf_console.log” > /root/.msf4/msfconsole.rc
+		■	echo "spool /root/msf_console.log" > /root/.msf4/msfconsole.rc
 	○	Logs will be stored at /root/msf_console.log
 
 Tool Installation
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
-●	cd the-backdoor-factory
+●	cd /opt/the-backdoor-factory
 ●	./install.sh
 
 HTTPScreenShot
@@ -46,7 +44,7 @@ HTTPScreenShot
 ●	cd /opt/httpscreenshot
 ●	chmod +x install-dependencies.sh && ./install-dependencies.sh
 ●	HTTPScreenShot only works if you are running on a 64-bit Kali by default. If you are running 32-bit PAE, install i686 phatomjs as follows:
-	○	wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
+	○	cd /opt && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
 	○	bzip2 -d phantomjs-1.9.8-linux-i686.tar.bz2
 	○	tar xvf phantomjs-1.9.8-linux-i686.tar
 	○	cp phantomjs-1.9.8-linux-i686/bin/phantomjs /usr/bin/
@@ -78,6 +76,7 @@ Gitrob
 ●	createdb -O gitrob gitrob
 ●	exit
 ●	cd /opt/gitrob/bin
+●	apt-get install libpq-dev
 ●	gem install gitrob
 
 CMSmap
@@ -138,7 +137,10 @@ The Hacker Playbook 2 - Forked Versions
 
 DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
-●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
+●       cd /opt
+●       wget https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/ptscripts/source-archive.zip
+●       unzip source-archive.zip
+●       cp -a ptscripts/trunk/dshashes.py /opt/NTDSXtract/
 
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
@@ -165,7 +167,7 @@ Spiderfoot
 WCE
 ●	Windows Credential Editor (WCE) is used to pull passwords from memory
 ●	Download from: http://www.ampliasecurity.com/research/windows-credentials-editor/ and save to /opt/. For example:
-	○	wget www.ampliasecurity.com/research/wce_v1_4beta_universal.zip
+	○	cd /opt && wget www.ampliasecurity.com/research/wce_v1_4beta_universal.zip
 	○	mkdir /opt/wce && unzip wce_v1* -d /opt/wce && rm wce_v1*.zip
 
 Mimikatz
@@ -184,14 +186,10 @@ PowerSploit (PowerShell)
 ●	git clone https://github.com/mattifestation/PowerSploit.git /opt/PowerSploit
 ●	cd /opt/PowerSploit && wget https://raw.githubusercontent.com/obscuresec/random/master/StartListener.py && wget https://raw.githubusercontent.com/darkoperator/powershell_scripts/master/ps_encoder.py
 
-Nishang (PowerShell)
-●	Collection of PowerShell scripts for exploitation and post exploitation
-●	git clone https://github.com/samratashok/nishang /opt/nishang
-
 Veil-Framework
 ●	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
-●	cd /opt/Veil/ && ./Install.sh -c
+●	cd /opt/Veil/ && setup/setup.sh -c
 
 Burp Suite Pro
 ●	Web Penetration Testing Tool
