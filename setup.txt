@@ -36,7 +36,7 @@ Tool Installation
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
-●	cd the-backdoor-factory
+●	cd /opt/the-backdoor-factory
 ●	./install.sh
 
 HTTPScreenShot
@@ -53,7 +53,7 @@ HTTPScreenShot
 
 SMBExec
 ●	A rapid psexec style attack with samba tools.
-●	git clone https://github.com/pentestgeek/smbexec.git /opt/smbexec
+●	git clone https://github.com/brav0hax/smbexec.git /opt/smbexec
 ●	cd /opt/smbexec && ./install.sh
 ●	Select 1 - Debian/Ubuntu and derivatives
 ●	Select all defaults
